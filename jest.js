@@ -8,7 +8,16 @@ function capatilize(string) {
   }
 }
 
-function sum(a, b) {
-  return a + b;
+function reverseString(string) {
+  let result = "";
+  for (let i = string.length - 1; i >= 0; i--) {
+    if (i == 2) {
+      result += string[i].toUpperCase();
+    } else {
+      result += string[i].toLowerCase();
+    }
+  }
+  return result;
 }
-export { capatilize, sum };
+
+export { capatilize, reverseString };
