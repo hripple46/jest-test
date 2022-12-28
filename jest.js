@@ -20,4 +20,18 @@ function reverseString(string) {
   return result;
 }
 
-export { capatilize, reverseString };
+function alphabetArray(string, number) {
+  let resultText = "";
+  let alphabet = "abcdefghijklmnopqrstuvwxyz";
+  let inputText = string.toLowerCase();
+  for (let i = 0; i < inputText.length; i++) {
+    for (let j = 0; j < alphabet.length; j++) {
+      if (alphabet[j] == inputText[i]) {
+        resultText += `${alphabet[(j + number) % alphabet.length]}`;
+      }
+    }
+  }
+  return resultText;
+}
+
+export { capatilize, reverseString, alphabetArray };
