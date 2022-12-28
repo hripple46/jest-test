@@ -33,5 +33,28 @@ function alphabetArray(string, number) {
   }
   return resultText;
 }
+function analyzeArray(array) {
+  let max = array[0];
+  let min = array[0];
+  let average = 0;
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > max || max == null) {
+      max = array[i];
+    }
+    if (array[i] < min || min == null) {
+      min = array[i];
+    }
+    average += array[i];
+  }
+  average = average / array.length;
 
-export { capatilize, reverseString, alphabetArray };
+  let object = {
+    Minimum: min,
+    Maximum: max,
+    Average: Math.round(average),
+    Length: array.length,
+  };
+  return object;
+}
+
+export { capatilize, reverseString, alphabetArray, analyzeArray };
